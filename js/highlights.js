@@ -9,8 +9,6 @@ AFRAME.registerComponent("cursor-listener", {
   update: function () {
     const fadeBackgroundEl = document.querySelector("#fadeBackground");
 
-    //check if the infoBanner plane already has comic text info child entity
-    //if so remove the child to avoid the overlapping of the text
     c = fadeBackgroundEl.children;
     if (c.length > 0) {
       var i;
@@ -22,7 +20,6 @@ AFRAME.registerComponent("cursor-listener", {
     }
   },
   handleMouseEnterEvents: function () {
-    // Mouse Enter Events
     this.el.addEventListener("mouseenter", () => {
       const id = this.el.getAttribute("id");
       const postersId = [
@@ -41,7 +38,6 @@ AFRAME.registerComponent("cursor-listener", {
     });
   },
   handleMouseLeaveEvents: function () {
-    // Mouse Leave Events
     this.el.addEventListener("mouseleave", () => {
       const { selectedItemId } = this.data;
       if (selectedItemId) {
